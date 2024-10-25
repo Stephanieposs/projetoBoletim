@@ -19,20 +19,12 @@ function btDados() {
 }
 function btBoletim() {
 
-  var sectionDados = document.getElementById('id_abaDados')
-  var sectionBoletim = document.getElementById('id_abaBoletim')
-  var sectionCertificado = document.getElementById('id_abaCertificado')
-
   sectionDados.setAttribute('hidden', "true");
   sectionBoletim.setAttribute('hidden', "false");
   sectionCertificado.setAttribute('hidden', "true");
 }
 
 function btCertificado() {
-
-  var sectionDados = document.getElementById('id_abaDados')
-  var sectionBoletim = document.getElementById('id_abaBoletim')
-  var sectionCertificado = document.getElementById('id_abaCertificado')
 
   sectionDados.setAttribute('hidden', "true");
   sectionBoletim.setAttribute('hidden', "true");

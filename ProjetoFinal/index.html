@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Boletim</title>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <div class="div_CardHeader">
+                        <h4>Escola: Mouts Academy</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form action="" class="form_CardBody">
+                        <input type="text" placeholder="Insira o Aluno:" id="nome_Aluno" class="form_input" />
+                        <a href="#" id="pesquisa_aluno"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="container">
+                        <header
+                            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                                <li class="nav-link px-2" id="li_dados">Dados</li>
+                                <li class="nav-link px-2" id="li_boletim">Boletim</li>
+                                <li class="nav-link px-2" id="li_certificado">Certificado</li>
+                            </ul>
+                        </header>
+                    </div>
+                    <hr />
+                    <section id="id_abaDados">
+                        <div class="divNome">
+                            <p id="pNome">
+                                <label for="idNome">Nome</label><br />
+                                <input required type="text" name="nome" id="idNome" value="" disabled/>
+                            </p>
+                            <p id="pNome">
+                                <label for="idSobrenome">Sobrenome</label><br />
+                                <input required type="text" name="sobrenome" id="idSobrenome" value="" disabled/>
+                            </p>
+                        </div>
+
+                        <br />
+
+                        <div class="display">
+                            <div>
+                                <p>
+                                    <label for="idEmail">Email</label><br />
+                                    <input required type="email" name="email" id="idEmail" value="" disabled/>
+                                </p>
+                            </div>
+                            <div>
+                                <p id="pData">
+                                    <label for="idDate">Data de Nascimento</label><br />
+                                    <input type="date" name="date" id="idDate" value="" disabled/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="display">
+                            <div>
+                                <p id="pNome">
+                                    <label for="idCurso">Curso</label><br />
+                                    <input required type="text" name="curso" id="idCurso" value="" disabled/>
+                                </p>
+                            </div>
+                            <div>
+                                <p id="pNome">
+                                    <label for="idPeriodo">Periodo</label><br />
+                                    <input required type="text" name="periodo" id="idPeriodo" value="" disabled/>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="display">
+                            <div>
+                                <p>
+                                    <label for="idEndereco">Endereço</label> <br />
+                                    <input type="text" name="endereco" id="idEndereco" value="" disabled/>
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="id_abaBoletim" hidden>
+                        <div class="row">
+                            <div class="div_grindBody">
+                                <div class="col-4">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                    Illo facilis a voluptatibus, laudantium sequi minus quae in
+                                    modi reprehenderit cupiditate. Culpa, dolor labore
+                                    exercitationem iusto sint incidunt blanditiis id facere.
+                                </div>
+                                <div class="col-4">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Iusto deserunt accusantium adipisci quibusdam delectus
+                                    animi, necessitatibus voluptatibus unde, tempore nobis id
+                                    nesciunt ad laborum facere quasi sint ipsam nisi ut?
+                                </div>
+                                <div class="col-2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Quis cum, dolorum quod ratione nobis accusamus? Nostrum
+                                    voluptas dolores pariatur optio ipsam, saepe sapiente
+                                    officia ratione laudantium porro veritatis, dolore aliquid!
+                                </div>
+                                <div class="col-2">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    Voluptates, culpa quas iusto architecto inventore enim,
+                                    perferendis praesentium maiores dolorem ipsa a pariatur
+                                    sequi maxime dolorum tenetur doloremque odit, eius
+                                    repudiandae.
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="id_abaCertificado" hidden></section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://kit.fontawesome.com/33a97e77a8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

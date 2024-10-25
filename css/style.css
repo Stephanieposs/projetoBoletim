@@ -86,5 +86,8 @@
 }
 
 .ButtonPDF{
-    
+    display: inline-block; 
+    width: auto;          
+    padding: 5px;     
+    margin-left: auto;
 }

@@ -38,9 +38,45 @@
 .div_grindBody{
     display: flex;
     align-items: center;
-    gap: 5px;
+}
+
+
+.partBoletim{
+    ul {
+        list-style-type: none; 
+        padding: 0; 
+        border: 1px solid #333; 
+        border-radius: 8px;
+    }
+    
+    h4 {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-bottom: 2px solid #333; 
+    }
+    
+    li {
+        padding: 10px;
+        font-size: 16px;
+        border-bottom: 1px solid #ddd;
+        background-color: #fafafa;
+    }
+    
+    li:last-child {
+        border-bottom: none;
+    }
+}
+
+
+.partBoletim_F_M{
+    text-align: center;
+    align-items: center;
 }
 
 .display{
     display: flex;
+
 }

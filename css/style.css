@@ -54,7 +54,6 @@
         font-size: 18px;
         font-weight: bold;
         background-color: #f0f0f0;
-        padding: 10px;
         border-bottom: 2px solid #333; 
     }
     
@@ -83,4 +82,9 @@
 
 .input100{
     width: 100%;
+
+}
+
+.ButtonPDF{
+    
 }

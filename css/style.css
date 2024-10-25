@@ -1,3 +1,4 @@
+/* Cores */
 :root{
     --azul-escuro: #425261;
     --marrom: #957d6b;
@@ -8,9 +9,8 @@
     --verde2: #54b097;
     --verde3:#7cbcac;
     --verde4:#b0dbd0;
-    --verde5: #99bfbf;
+    --verde5: #99bfbf;
 }
-
 
 .div_CardHeader {
     display: flex;
@@ -18,35 +18,42 @@
     gap: 30px;
 }
 
-
-.form_CardBody{
+/* Ajuste de layout para seções de entrada e botão de pesquisa */
+.form_CardBody {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-
-.form_input{
-    width: 90%;
-    height: 100%;
+.form_input {
+    width: 80%; /* Ajuste inicial do input */
     border: none;
     outline: none;
     box-shadow: none;
-
 }
 
-.div_grindBody{
+.div_grindBody {
     display: flex;
-    align-items: center;
+    align-items: stretch; /* Mantém os itens esticados */
+    flex-wrap: wrap;
+    margin: 0; /* Remove margem extra */
+    padding: 0; /* Remove o preenchimento */
+    gap: 0; /* Remove o espaço entre os itens */
 }
 
+/* Definições do boletim */
+.partBoletim {
+    flex: 1; /* Garante que todos os elementos ocupem espaço igual */
+    margin: 0; /* Remove a margem extra entre os elementos */
+    border: 1px solid #333; /* Mantém as bordas */
 
-.partBoletim{
     ul {
-        list-style-type: none; 
-        padding: 0; 
-        border: 1px solid #333; 
+        list-style-type: none;
+        padding: 0;
+        border: 1px solid #333;
         border-radius: 8px;
+        margin: 10px;
     }
     
     h4 {
@@ -54,7 +61,7 @@
         font-size: 18px;
         font-weight: bold;
         background-color: #f0f0f0;
-        border-bottom: 2px solid #333; 
+        border-bottom: 2px solid #333;
     }
     
     li {
@@ -69,25 +76,85 @@
     }
 }
 
+.partBoletim ul {
+    padding: 0; /* Remove o padding interno */
+    margin: 0; /* Remove a margem para ficar bem próximo */
+}
 
-.partBoletim_F_M{
+.partBoletim h4, .partBoletim li {
+    margin: 0;
+    padding: 10px;
+}
+
+.partBoletim_F_M {
     text-align: center;
     align-items: center;
 }
 
-.display{
+.display {
     display: flex;
-
+    flex-wrap: wrap;
 }
 
-.input100{
+.input100 {
     width: 100%;
+}
+
+/* Botão PDF ajustável */
+.ButtonPDF {
+    display: inline-block;
+    width: auto;
+    padding: 5px;
+    margin-left: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .form_input {
+        width: 100%; /* Input ocupa toda a largura em telas menores */
+        margin-bottom: 10px;
+    }
+    
+    .div_CardHeader, .form_CardBody {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Exibir as colunas do boletim em uma coluna só */
+    .div_grindBody {
+        flex-direction: column;
+    }
+
+    .partBoletim {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Botão de PDF centralizado */
+    .ButtonPDF {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
 
 }
 
-.ButtonPDF{
-    display: inline-block; 
-    width: auto;          
-    padding: 5px;     
-    margin-left: auto;
+@media (max-width: 480px) {
+    /* Texto e layout adicionais para telas bem pequenas */
+    .div_CardHeader h4 {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .form_CardBody {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .partBoletim ul li {
+        font-size: 14px;
+    }
+
 }

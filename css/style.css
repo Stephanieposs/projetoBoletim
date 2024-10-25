@@ -38,7 +38,6 @@
 .div_grindBody{
     display: flex;
     align-items: center;
-    
 }
 
 
@@ -75,4 +74,9 @@
 .partBoletim_F_M{
     text-align: center;
     align-items: center;
+}
+
+.display{
+    display: flex;
+
 }

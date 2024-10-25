@@ -12,18 +12,18 @@ liCertificado.addEventListener('click', btCertificado())
 
 function btDados(){
   sectionDados.setAttribute("hidden", false);
-  sectionBoletim.setAttribute('hidden', true);
+  sectionBoletim.setAttribute("hidden", true);
   sectionCertificado.setAttribute("hidden", true);
 }
 function btBoletim(){
-    sectionDados.setAttribute("hidden", true);
+    sectionDados.setAttribute('hidden', true);
     sectionBoletim.setAttribute('hidden', false);
-    sectionCertificado.setAttribute("hidden", true);
+    sectionCertificado.setAttribute('hidden', true);
 }
 
 function btCertificado(){
-  sectionDados.setAttribute("hidden", true);
+  sectionDados.setAttribute('hidden', true);
   sectionBoletim.setAttribute('hidden', true);
-  sectionCertificado.setAttribute("hidden", false);
+  sectionCertificado.setAttribute('hidden', false);
 }
 

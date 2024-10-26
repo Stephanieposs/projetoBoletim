@@ -33,35 +33,19 @@ function btCertificado() {
   sectionCertificado.removeAttribute("hidden");
 }
 
-function funcGerarBoletim(){
-  
-  
-  const content = document.getElementById('id_abaBoletim');
-
-  const options = {
-    margin: [10,10,10,10],
-    filename: "boletim.pdf",
-    html2canvas: {scale:2},
-    jsPDF: {unit: "mm", format:"a4", orientation: "portrait"} 
-  }
-
-  html2pdf().set(options).from(content).save();
-
-}
-
 btgerarBoletim.addEventListener("click", () => {
 
   // pega a div do conteudo que desejamo gerar o pdf
   //const content = document.querySelector('#content');
-  const content = document.getElementById('id_abaBoletim');
+  const content = document.getElementById('id_abaBoletim2');
 
   //configuração da bilioteca html2pdf
   const options = {
-      margin: 10,
+      margin: 1,
       filename: "boletim.pdf",
       html2canvas: { scale: 2 },
-      image: { type: 'png', quality: 0.98 },
-      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+      image: { type: 'jpeg', quality: 1 },
+      jsPDF: { unit: "cm", format: "a4", orientation: "landscape" }
   }
 
   //gerar e baixar pdf

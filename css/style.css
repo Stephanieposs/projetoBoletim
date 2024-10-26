@@ -37,8 +37,8 @@
     display: flex;
     align-items: stretch; /* Mantém os itens esticados */
     flex-wrap: wrap;
-    margin: 0; /* Remove margem extra */
-    padding: 0; /* Remove o preenchimento */
+    margin: auto; /* Remove margem extra */
+    padding: 5px; /* Remove o preenchimento */
     gap: 0; /* Remove o espaço entre os itens */
 }
 
@@ -137,6 +137,12 @@
         margin: 0 auto;
     }
 
+    #id_abaDados .display {
+        flex-direction: column; /* Coloca os elementos em uma coluna apenas em telas pequenas */
+    }
+    #id_abaDados .col-6 {
+        width: 100%; /* Cada item ocupará 100% da largura */
+    }
 
 }
 

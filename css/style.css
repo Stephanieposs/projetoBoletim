@@ -108,6 +108,14 @@
     margin-left: auto;
 }
 
+
+.iColor{
+    color: black;
+}
+
+
+
+
 /* Responsividade */
 @media (max-width: 768px) {
     .form_input {

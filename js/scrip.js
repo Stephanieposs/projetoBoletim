@@ -38,7 +38,6 @@ btgerarBoletim.addEventListener("click", () => {
   // pega a div do conteudo que desejamo gerar o pdf
   //const content = document.querySelector('#content');
   const content = document.getElementById('id_abaBoletim2');
-
   //configuração da bilioteca html2pdf
   const options = {
       margin: 1,
@@ -58,6 +57,4 @@ btgerarBoletim.addEventListener("click", () => {
     .save()
     .catch((error) => window.alert("erro"));
 });
-
-
 

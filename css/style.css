@@ -172,3 +172,24 @@
     }
 
 }
+
+.classCertificado{
+    background-color: white;
+    padding: 1.5rem;
+    border: var(--azul-escuro);
+    border-style: dashed;
+}
+
+.classCertificado p{
+    font-size: x-large;
+    margin-top: 2rem;
+}
+
+.classCertificado img {
+    width: 15rem;
+}
+
+.header_certificado{
+    justify-content: space-between;
+    display: flex;
+}

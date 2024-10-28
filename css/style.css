@@ -10,12 +10,34 @@
     --verde3:#7cbcac;
     --verde4:#b0dbd0;
     --verde5: #99bfbf;
+
+    --fundodapagina: #425261;
+    --botoes: #54b097;
+    --hoverBotao: #049c7b;
+    --titulos: #5DD9C1;
+    --texto: #b9dbd0;
+    --a: #b9dbd0;
+    --hoverA: #99bfbf;
+    --containers:#1D2E3B;
+    --inputs: white;
+}
+.card{
+    background-color: var(--containers);
+}
+
+body{
+    background-color: var(--fundodapagina);
+}
+
+.container{
+    background-color: var(--containers);
 }
 
 .div_CardHeader {
     display: flex;
     align-items: center;
     gap: 30px;
+    color: var(--titulos);
 }
 
 /* Ajuste de layout para seções de entrada e botão de pesquisa */
@@ -31,7 +53,12 @@
     border: none;
     outline: none;
     box-shadow: none;
+    background-color: var(--containers);
+    color: white;
+    
 }
+
+
 
 .div_grindBody {
     display: flex;
@@ -40,6 +67,20 @@
     margin: auto; /* Remove margem extra */
     padding: 5px; /* Remove o preenchimento */
     gap: 0; /* Remove o espaço entre os itens */
+}
+
+.Botaoprinc{
+    background-color: var(--botoes);
+    color: white;
+    border-radius: 6px;
+    border: none;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+
+.Botaoprinc:hover{
+    background-color: var(--hoverBotao);
 }
 
 /* Definições do boletim */
@@ -94,7 +135,15 @@
 .display {
     display: flex;
     flex-wrap: wrap;
+    color: white;
 }
+
+.display label{
+    color: var(--texto);
+}
+
+
+
 
 .input100 {
     width: 100%;
@@ -106,11 +155,29 @@
     width: auto;
     padding: 5px;
     margin-left: auto;
+    margin-top: 1.5rem;
+    border-radius: 6px;
+    border: none;
+
+    background-color: var(--botoes);
+    color: white;
+
+}
+
+.div_Boletim{
+    background-color: white;
+    padding-top: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
 }
 
 
+.ButtonPDF:hover{
+    background-color: var(--hoverBotao);
+}
+
 .iColor{
-    color: black;
+    color: var(--hoverA)
 }
 
 
@@ -194,6 +261,42 @@
 }
 
 .header_certificado{
-    justify-content: space-between;
-    display: flex;
+   
+    text-align: center;
 }
+
+
+.imgLogoMouts{
+    display: inline-block;
+    width: auto;
+    margin-left: auto;
+}
+
+
+
+.fontCertificado {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+.div_CertificadoText{
+    text-align: center;
+    margin: 0;
+}
+
+
+.div_CertificadoText2{
+    margin-top: 8rem;
+    margin-bottom: 0;
+    
+}
+
+.div_CertificadoText3{
+   margin: 0;
+    
+}
+
+

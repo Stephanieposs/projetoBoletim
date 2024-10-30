@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Margarine&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Margarine&family=Satisfy&display=swap"
+        rel="stylesheet">
+
 
     <title>Boletim</title>
 </head>
@@ -36,8 +38,10 @@
                             class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
                             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                                 <li class="nav-link px-2" id="li_dados"><button class="Botaoprinc">Dados</button></li>
-                                <li class="nav-link px-2" id="li_boletim"><button class="Botaoprinc">Boletim</button></li>
-                                <li class="nav-link px-2" id="li_certificado"><button class="Botaoprinc">Certificado</button></li>
+                                <li class="nav-link px-2" id="li_boletim"><button class="Botaoprinc">Boletim</button>
+                                </li>
+                                <li class="nav-link px-2" id="li_certificado"><button
+                                        class="Botaoprinc">Certificado</button></li>
                             </ul>
                         </header>
                     </div>
@@ -85,7 +89,9 @@
                     <section id="id_abaBoletim" hidden>
                         <div class="row">
                             <div id="id_abaBoletim2" class="div_Boletim">
-                                <label for="" id="NomeAlunoBoletim"><h5>Nome do aluno</h5></label>
+                                <label for="" id="NomeAlunoBoletim">
+                                    <h5>Nome do aluno</h5>
+                                </label>
                                 <div class="div_grindBody">
                                     <div class="col-4 partBoletim">
                                         <ul>
@@ -142,32 +148,34 @@
 
                         </div>
                     </section>
-                    <section id="id_abaCertificado" hidden class="classCertificado">
-                        <div class="header_certificado">
-                            <h1 class="fontCertificado">Certificado</h1>
-                        </div>
-                        <div class="div_CertificadoText">
-                            <div>
-                                <p>Este certificado atesta que ____________
-                                    concluiu com êxito o curso Mouts Academy oferecido por MOUTS TI, 
-                                    no período compreendido entre ____________ e __________, 
-                                    com carga horária de ______ horas. 
-                                </p>
+                    <section id="id_abaCertificado" hidden>
+                        <div class="classCertificado" id="id_abaCertificado2">
+                            <div class="header_certificado">
+                                <h1 class="fontCertificado">Certificado</h1>
                             </div>
-                            <br>
-                            <div class="div_CertificadoText2">
-                                <p class="div_CertificadoText3">_______________________</p>
-                                <span>Diretor(a)</span>
+                            <div class="div_CertificadoText">
+                                <div class="div_CertificadoText1">
+                                    <p>Este certificado atesta que ____________
+                                        concluiu com êxito o curso Mouts Academy oferecido por MOUTS TI,
+                                        no período compreendido entre ____________ e __________,
+                                        com carga horária de ______ horas.
+                                    </p>
+                                </div>
+                                <br>
+                                <div class="div_CertificadoText2">
+                                    <div>
+                                        <img src="./assets/assinatura.png" alt="">
+                                        <p class="div_CertificadoText3">_______________________</p>
+                                        <span>Diretor(a)</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="imgLogoMouts">
+                                <img src="./assets/logo_mouts_transparente.svg" alt="Logo Mouts Academy" srcset="">
                             </div>
                         </div>
-                        
-                        
-
-                        <div class="imgLogoMouts">
-                            <img src="./assets/logo_mouts_transparente.svg" alt="Logo Mouts Academy" srcset="">
-                        </div>
-
-
+                        <button class="ButtonPDF" id="btImprimirCertificado">Imprimir Certificado</button>
                     </section>
                 </div>
             </div>

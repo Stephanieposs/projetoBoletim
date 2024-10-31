@@ -14,7 +14,7 @@ var btgerarBoletim = document.getElementById('btImprimirBoletim');
 var btgerarCertificado = document.getElementById('btImprimirCertificado');
 //btgerarBoletim.addEventListener('click', funcGerarBoletim)
 
-
+fetchDataDados();
 
 function btDados() {
   sectionDados.removeAttribute("hidden");
@@ -26,12 +26,16 @@ function btBoletim() {
   sectionDados.setAttribute("hidden", "true");
   sectionBoletim.removeAttribute("hidden");
   sectionCertificado.setAttribute("hidden", "true");
+
+  fetchDataBoletim();
 }
 
 function btCertificado() {
   sectionDados.setAttribute("hidden", "true");
   sectionBoletim.setAttribute("hidden", "true");
   sectionCertificado.removeAttribute("hidden");
+
+  fetchDataCertificado();
 }
 
 btgerarBoletim.addEventListener("click", () => {
@@ -64,10 +68,8 @@ btgerarBoletim.addEventListener("click", () => {
 
 btgerarCertificado.addEventListener("click", () => {
 
-  // pega a div do conteudo que desejamo gerar o pdf
-  //const content = document.querySelector('#content');
   const content = document.getElementById('id_abaCertificado2');
-  //configuração da bilioteca html2pdf
+  
   const options = {
       margin: 1,
       filename: "Certificado.pdf",
@@ -76,9 +78,6 @@ btgerarCertificado.addEventListener("click", () => {
       jsPDF: { unit: "cm", format: "a4", orientation: "portrait" }
   }
 
-  //gerar e baixar pdf
-  //html2pdf().set(options).from(content).save();
-  //window.alert("entrou aqui")
 
   html2pdf()
     .from(content)
@@ -86,3 +85,119 @@ btgerarCertificado.addEventListener("click", () => {
     .save()
     .catch((error) => window.alert("erro"));
 });
+
+
+async function fetchDataDados(){
+  try{
+      
+      const nomeAlunoPesquisado = document.getElementById("nome_Aluno").value;
+      const myHeaders = new Headers();
+      myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdheWJyaWVsQGV4YW1wbGUuY29tIiwiaWQiOiIyYzM0ZGFjNC01MzM3LTQyZDktYjJmZS00ZGJiNmE2NTEwOTciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJURUFDSEVSIiwiZXhwIjoxNzMyOTAzMTkyfQ.jVC7DKkBiEWagBxGSHUIH_WJHQAKLMxtt8F55DM0dB4");
+
+      const requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow"
+      };
+
+      var id = "51bd4728-9a80-4318-abb3-57bb37304895";
+      const response = await fetch(`https://localhost:6061/api/Student/${id}`, requestOptions);
+
+      
+      if(!response.ok){
+        throw new Error("Could not fetch resource");
+      }
+
+      const data = await response.json();
+      window.alert(JSON.stringify(data))
+    
+      const mostrarNome = document.getElementById("idNome");
+      mostrarNome.value = data.name;
+
+      const mostrarEmail = document.getElementById("idEmail");
+      mostrarEmail.value = data.email;
+
+      const mostrarNasci = document.getElementById("idDate");
+      mostrarNasci.value = data.birth_date;
+
+      const mostrarCurso = document.getElementById("idCurso");
+      mostrarCurso.value = data.course;
+
+      const mostrarPeriodo = document.getElementById("idPeriodo");
+      mostrarPeriodo.value = data.period;
+
+  }
+  catch(error){
+      console.error(error);
+  }
+}
+
+async function fetchDataBoletim(){
+  try{
+      
+      const nomeAlunoPesquisado = document.getElementById("nome_Aluno").value;
+      const myHeaders = new Headers();
+      myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdheWJyaWVsQGV4YW1wbGUuY29tIiwiaWQiOiIyYzM0ZGFjNC01MzM3LTQyZDktYjJmZS00ZGJiNmE2NTEwOTciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJURUFDSEVSIiwiZXhwIjoxNzMyOTAzMTkyfQ.jVC7DKkBiEWagBxGSHUIH_WJHQAKLMxtt8F55DM0dB4");
+
+      const requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow"
+      };
+
+      var id = "51bd4728-9a80-4318-abb3-57bb37304895";
+      const response = await fetch(`https://localhost:6061/api/Grade/${id}`, requestOptions);
+
+      
+      if(!response.ok){
+        throw new Error("Could not fetch resource");
+      }
+
+      const data = await response.json();
+      window.alert(JSON.stringify(data))
+    
+      const mostrarNome = document.getElementById("idNome");
+      mostrarNome.value = data.name;
+
+      
+
+  }
+  catch(error){
+      console.error(error);
+  }
+}
+
+async function fetchDataCertificado(){
+  try{
+      
+      const nomeAlunoPesquisado = document.getElementById("nome_Aluno").value;
+      const myHeaders = new Headers();
+      myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdheWJyaWVsQGV4YW1wbGUuY29tIiwiaWQiOiIyYzM0ZGFjNC01MzM3LTQyZDktYjJmZS00ZGJiNmE2NTEwOTciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJURUFDSEVSIiwiZXhwIjoxNzMyOTAzMTkyfQ.jVC7DKkBiEWagBxGSHUIH_WJHQAKLMxtt8F55DM0dB4");
+
+      const requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow"
+      };
+
+      var id = "51bd4728-9a80-4318-abb3-57bb37304895";
+      const response = await fetch(`https://localhost:6061/api/Student/${id}`, requestOptions);
+
+      
+      if(!response.ok){
+        throw new Error("Could not fetch resource");
+      }
+
+      const data = await response.json();
+      
+    
+      const mostrarNome = document.getElementById("idNameCertificado");
+      mostrarNome.value = data.name;
+
+      
+
+  }
+  catch(error){
+      console.error(error);
+  }
+}

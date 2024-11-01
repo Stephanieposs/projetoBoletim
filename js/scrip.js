@@ -14,12 +14,16 @@ var btgerarBoletim = document.getElementById('btImprimirBoletim');
 var btgerarCertificado = document.getElementById('btImprimirCertificado');
 //btgerarBoletim.addEventListener('click', funcGerarBoletim)
 
-fetchDataDados();
+
+var lupaAluno = document.getElementById("pesquisa_aluno")
+lupaAluno.addEventListener('click', fetchDataDados(fetchAllAndFindByName()))
+
 
 function btDados() {
   sectionDados.removeAttribute("hidden");
   sectionBoletim.setAttribute("hidden", "true");
   sectionCertificado.setAttribute("hidden", "true");
+
 }
 
 function btBoletim() {
@@ -27,7 +31,7 @@ function btBoletim() {
   sectionBoletim.removeAttribute("hidden");
   sectionCertificado.setAttribute("hidden", "true");
 
-  fetchDataBoletim();
+  fetchDataBoletim(fetchAllAndFindByName());
 }
 
 function btCertificado() {
@@ -35,7 +39,7 @@ function btCertificado() {
   sectionBoletim.setAttribute("hidden", "true");
   sectionCertificado.removeAttribute("hidden");
 
-  fetchDataCertificado();
+  fetchDataCertificado(fetchAllAndFindByName());
 }
 
 btgerarBoletim.addEventListener("click", () => {
@@ -86,15 +90,39 @@ btgerarCertificado.addEventListener("click", () => {
     .catch((error) => window.alert("erro"));
 });
 
-async function getStudentId() {
-  const nomeAlunoPesquisado = document.getElementById("nome_Aluno").value;
 
+async function fetchAllAndFindByName() {
+  try {
+    const nomeAlunoPesquisado = document.getElementById("nome_Aluno").value;
+
+    
+    const response = await fetch("https://localhost:6061/api/Student");
+    
+    if (!response.ok) {
+      throw new Error(`Erro na resposta da API: ${response.status}`);
+    }
+
+    // Pega todos os itens no formato JSON
+    const allData = await response.json();
+
+    // Encontra um item específico pelo name
+    const item = allData.find((student) => student.name === nomeAlunoPesquisado);
+
+    if (item) {
+      console.log("Item encontrado:", item);
+      return item.id; 
+    } else {
+      console.log(`Item com name ${nomeAlunoPesquisado} não encontrado.`);
+    }
+  } catch (error) {
+    console.error("Erro ao buscar os dados:", error);
+  }
 }
 
-async function fetchDataDados(){
+async function fetchDataDados(studentId){
   try{
       
-      const nomeAlunoPesquisado = document.getElementById("nome_Aluno").value;
+      
       const myHeaders = new Headers();
       myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdheWJyaWVsQGV4YW1wbGUuY29tIiwiaWQiOiIyYzM0ZGFjNC01MzM3LTQyZDktYjJmZS00ZGJiNmE2NTEwOTciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJURUFDSEVSIiwiZXhwIjoxNzMyOTAzMTkyfQ.jVC7DKkBiEWagBxGSHUIH_WJHQAKLMxtt8F55DM0dB4");
 
@@ -104,7 +132,7 @@ async function fetchDataDados(){
         redirect: "follow"
       };
 
-      var id = "51bd4728-9a80-4318-abb3-57bb37304895";
+      var id = studentId || "51bd4728-9a80-4318-abb3-57bb37304895";
       const response = await fetch(`https://localhost:6061/api/Student/${id}`, requestOptions);
 
       
@@ -139,7 +167,6 @@ async function fetchDataDados(){
 async function fetchDataBoletim(){
   try{
       
-      const nomeAlunoPesquisado = document.getElementById("nome_Aluno").value;
       const myHeaders = new Headers();
       myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdheWJyaWVsQGV4YW1wbGUuY29tIiwiaWQiOiIyYzM0ZGFjNC01MzM3LTQyZDktYjJmZS00ZGJiNmE2NTEwOTciLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJURUFDSEVSIiwiZXhwIjoxNzMyOTAzMTkyfQ.jVC7DKkBiEWagBxGSHUIH_WJHQAKLMxtt8F55DM0dB4");
 
@@ -149,7 +176,7 @@ async function fetchDataBoletim(){
         redirect: "follow"
       };
 
-      var id = "51bd4728-9a80-4318-abb3-57bb37304895";
+      var id = studentId || "51bd4728-9a80-4318-abb3-57bb37304895";
       const response = await fetch(`https://localhost:6061/api/Grade/${id}`, requestOptions);
 
       
@@ -184,7 +211,7 @@ async function fetchDataCertificado(){
         redirect: "follow"
       };
 
-      var id = "51bd4728-9a80-4318-abb3-57bb37304895" ;
+      var id = studentId || "51bd4728-9a80-4318-abb3-57bb37304895" ;
       const response = await fetch(`https://localhost:6061/api/Student/${id}`, requestOptions);
 
       

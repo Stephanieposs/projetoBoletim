@@ -86,6 +86,10 @@ btgerarCertificado.addEventListener("click", () => {
     .catch((error) => window.alert("erro"));
 });
 
+async function getStudentId() {
+  const nomeAlunoPesquisado = document.getElementById("nome_Aluno").value;
+
+}
 
 async function fetchDataDados(){
   try{
@@ -180,7 +184,7 @@ async function fetchDataCertificado(){
         redirect: "follow"
       };
 
-      var id = "51bd4728-9a80-4318-abb3-57bb37304895";
+      var id = "51bd4728-9a80-4318-abb3-57bb37304895" ;
       const response = await fetch(`https://localhost:6061/api/Student/${id}`, requestOptions);
 
       
@@ -189,12 +193,8 @@ async function fetchDataCertificado(){
       }
 
       const data = await response.json();
-      
-    
       const mostrarNome = document.getElementById("idNameCertificado");
       mostrarNome.value = data.name;
-
-      
 
   }
   catch(error){

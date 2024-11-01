@@ -181,6 +181,9 @@ body{
     color: var(--hoverA)
 }
 
+#idNameCertificado{
+    border: none;
+}
 
 
 
